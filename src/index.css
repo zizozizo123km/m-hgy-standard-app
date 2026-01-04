@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styling for Netflix Theme */
+body {
+  /* Use a standard Netflix-like dark background and font stack */
+  @apply bg-gray-950 text-white antialiased;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Component for the signature Netflix red focus state */
+@layer components {
+  .netflix-focus {
+    @apply focus:outline-none focus:ring-4 focus:ring-[#e50914] focus:ring-offset-2 focus:ring-offset-gray-950 transition-shadow duration-150;
+  }
+}
+ 
+/* Optional: Improve accessibility and visual stability */
+input, button, textarea {
+  @apply netflix-focus;
+}
+
+/* Base link styling */
+a {
+  @apply text-white hover:text-gray-300 transition duration-200;
+}
+
+/* Custom scrollbar for dark theme (for better integration) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414; /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333; /* Darker thumb */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
